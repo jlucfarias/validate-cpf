@@ -1,0 +1,53 @@
+{
+  "name": "validate-cpf",
+  "version": "1.0.0",
+  "description": "Valid CPF and verify existance of it",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/types",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "João Lucas Farias",
+    "url": "https://github.com/jlucfarias"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "validate-cpf",
+    "url": "https://github.com/jlucfarias/validate-cpf.git"
+  },
+  "license": "MIT",
+  "private": "false",
+  "keywords": [
+    "validation",
+    "cpf",
+    "document",
+    "brazil",
+    "typescript"
+  ],
+  "scripts": {
+    "prepublish": "rm -rf dist && swc src -d dist --ignore **/__tests__",
+    "test": "jest ./src --ci --reporters=default --reporters=jest-junit",
+    "lint": "npx @biomejs/biome check --write ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@swc/cli": "^0.4.1-nightly.20240914",
+    "@swc/core": "^1.7.36",
+    "@swc/jest": "^0.2.36",
+    "@types/jest": "^29.5.13",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "ts-node": "^10.9.2"
+  },
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-junit.xml",
+    "ancestorSeparator": " > ",
+    "uniqueOutputName": "false",
+    "suiteNameTemplate": "{filepath}",
+    "classNameTemplate": "{classname}",
+    "titleTemplate": "{title}"
+  }
+}
